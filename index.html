@@ -1,0 +1,245 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Greeting</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #ffe0b2;
+      font-family: Arial, sans-serif;
+    }
+    .box {
+      text-align: center;
+      padding: 20px;
+      background-color: #ffcc80;
+      border: 2px solid #ff8a65;
+      border-radius: 10px;
+      width: 300px;
+      position: relative;
+      animation: none;
+      transition: transform 0.3s;
+    }
+    .box.vibrate {
+      animation: vibrate 0.1s linear infinite;
+    }
+    @keyframes vibrate {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-5px); }
+    }
+    h1 {
+      color: #ff5722;
+    }
+    p {
+      margin: 10px 0;
+      color: #6d4c41;
+    }
+    .button-group {
+      margin-top: 20px;
+    }
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #ff7043;
+      color: white;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #d84315;
+    }
+  </style>
+</head>
+<body>
+  <div class="box" id="messageBox">
+    <h1>🎉 Happy Birthday! 🎂</h1>
+    <p>Would you like to proceed further?</p>
+    <div class="button-group">
+      <button onclick="handleClick()">Yes</button>
+      <button onclick="handleClick()">Definitely Yes</button>
+    </div>
+  </div>
+
+  <script>
+    let clickCount = 0;
+
+    function handleClick() {
+      const box = document.getElementById('messageBox');
+      clickCount++;
+
+      // Vibrate effect
+      box.classList.add('vibrate');
+      setTimeout(() => box.classList.remove('vibrate'), 3);
+
+      // Display "Smile" message
+      alert('😊 Smile!');
+
+      // On the 4th click, redirect to the next page
+      if (clickCount === 4) {
+        window.location.href = "frame.html";
+      }
+    }
+  </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Arya</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #ffe0b2;
+      font-family: Arial, sans-serif;
+    }
+    .box {
+      text-align: center;
+      padding: 20px;
+      background-color: #ffcc80;
+      border: 2px solid #ff8a65;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+      position: relative;
+    }
+    .button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #ff7043;
+      color: white;
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-top: 20px;
+      transition: all 0.2s;
+    }
+    .button:hover {
+      background-color: #d84315;
+    }
+    .button:active {
+      background-color: #bf360c;
+    }
+
+    /* Text Box for extra info */
+    .text-box {
+      margin-top: 10px;
+      background-color: #ffe082;
+      padding: 5px;
+      font-weight: bold;
+      color: #6d4c41;
+    }
+
+    /* Animations */
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-5px); }
+      100% { transform: translateX(0); }
+    }
+
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    /* Apply animations on button click */
+    .button.clicked {
+      animation: shake 0.3s ease-in-out;
+    }
+
+    .text-box.fadeIn {
+      animation: fadeIn 1s ease-in-out;
+    }
+    
+    .box.fadeIn {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .button.bounce {
+      animation: bounce 0.5s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Main Content Box -->
+  <div class="box" id="messageBox">
+    <h1>Happy Birthday Arya 🤩</h1>
+    <p id="question">Kya aap mere saath ek haseen safar par chlna chahengi?</p>
+    <div class="button-container">
+      <button class="button" id="yesBtn" onclick="moveForward()">Yes</button>
+    </div>
+    <div class="text-box" id="textBox">You don't have a 2nd choice</div>
+  </div>
+
+  <script>
+    // Function to handle the button clicks and change text
+    let step = 0;
+
+    function moveForward() {
+      const messageBox = document.getElementById('messageBox');
+      const question = document.getElementById('question');
+      const yesBtn = document.getElementById('yesBtn');
+      const textBox = document.getElementById('textBox');
+
+      // Add animation to button click (shake effect)
+      yesBtn.classList.add('clicked');
+      setTimeout(() => yesBtn.classList.remove('clicked'), 300); // Reset animation after 300ms
+
+      if (step === 0) {
+        // Step 1: Change text to "Give me a pyaari si smile" and modify button
+        question.textContent = "Lekin usse pehle, Give me a pyaari si smile😊";
+        yesBtn.textContent = "Hnn";
+        textBox.style.display = "none";  // Hide the extra text box
+        // Apply fade-in animation to the box content
+        messageBox.classList.add('fadeIn');
+        step = 1;
+      } else if (step === 1) {
+        // Step 2: Change to "Thodi si or pyaari"
+        question.textContent = "Thodi si or pyaari";
+        // Add bounce effect to Done button
+        yesBtn.classList.add('bounce');
+        setTimeout(() => yesBtn.classList.remove('bounce'), 500); // Reset bounce animation after 500ms
+        step = 2;
+      } else if (step === 2) {
+        // Step 3: Change to "Awww.. itti pyaari smile m to pighal gyi.."
+        question.textContent = "Awww.. itti pyaari smile m to pighal gyi..";
+        yesBtn.textContent = "😅";
+        // Apply fade-in animation to the content
+        messageBox.classList.add('fadeIn');
+        step = 3;
+      } else if (step === 3) {
+        // Step 4: Redirect to new page
+        window.location.href = "frame.html"; // Redirect to the next page (frame.html)
+      }
+    }
+  </script>
+
+</body>
+</html>
